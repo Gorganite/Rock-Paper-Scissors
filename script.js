@@ -1,1 +1,7 @@
-let message = prompt("Please choose: ROCK, PAPER or SCISSORS.");
+const choices = ["rock", "paper", "scissors"];
+
+function getComputerChoice() {
+  console.log("Test");
+}
+
+getComputerChoice();
