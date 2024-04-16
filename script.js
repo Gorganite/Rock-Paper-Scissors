@@ -1,38 +1,50 @@
-const choices = ["Rock", "Paper", "Scissors"];
+const choices = ["rock", "paper", "scissors"]
 
 //The function for the computer's random choices
 function getComputerChoice() {
-  const decision = choices[Math.floor(Math.random() * choices.length)];
-  return decision;
+  const decision = choices[Math.floor(Math.random() * choices.length)]
+  return decision
 }
 
 // Function to determine the winner
 function checkWinner(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return "Tie!";
+    return "Tie!"
   }
   // If it's a player win
-  else if ((playerSelection === "Rock" && computerSelection === "Scissors") || (playerSelection === "Scissors" && computerSelection === "Paper") || (playerSelection === "Paper" && computerSelection === "Rock")) {
-    return "Player";
+  else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "rock")) {
+    return "Player"
   }
   // If it's a computer win
   else {
-    return "Computer";
+    return "Computer"
   }
 }
 
 // Function to play a round
 function playRound(playerSelection, computerSelection) {
-  const result = checkWinner(playerSelection, computerSelection);
+  const result = checkWinner(playerSelection, computerSelection)
   if (result === "Tie!") {
-    return "It's a Tie!";
+    return "It's a Tie!"
   } else if (result === "Player") {
-    return `You Win! ${playerSelection} beats ${computerSelection}`;
+    return `You Win! ${playerSelection} beats ${computerSelection}`
   } else {
-    return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    return `You Lose! ${computerSelection} beats ${playerSelection}`
   }
 }
 
-const playerSelection = "Rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+//5 round game
+function playGame(){
+  console.log("Welcome!")
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = "rock";
+    const computerSelection = getComputerChoice();
+    const roundResult = playRound(playerSelection, computerSelection);
+    console.log(roundResult); 
+  }
+}
+
+playGame()
