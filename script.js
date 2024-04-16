@@ -9,26 +9,36 @@ function getComputerChoice() {
 //If it is a tie
 function checkWinner(playerSelection, computerSelection) {
     if (playerSelection === computerSelection)
-        return "It's a tie!"
+        return "Tie!"
 }
 //If it is a player win
-    else if ( 
+    else if {
         (playerSelection === "rock" && computerSelection === "scissors")||
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock") 
-    ) {
-        return "Player Wins!";
+ } {
+        return "Player";
     }
 //If it is a computer win
         else {
-        return "Computer Wins";
+        return "Computer";
         }
 
 
-
+//function which declares the results
 function playGame(playerSelection, computerSelection) {
     const result = winnerResult(playerSelection, computerSelection);
+    if (result === "Tie") {
+        return "It's a Tie!"
+    }
+    else if (result === "Player"){
+        return `You Win! ${playerSelection} beats ${computerSelection}`
 
+    }
+}
+
+else {
+    return `You Lose... : ${computerSelection} beats ${playerSelection}`
 }
 
 
