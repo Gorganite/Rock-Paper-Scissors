@@ -1,5 +1,6 @@
 const choices = ["rock", "paper", "scissors"];
 
+// To get the computer choices to be random
 function getComputerChoice() {
   const decision = choices[Math.floor(Math.random() * choices.length)];
   return decision;
@@ -19,6 +20,7 @@ function checkWinner(playerSelection, computerSelection) {
   }
 }
 
+// Logging initial details for the player selection
 function playRound(playerSelection, computerSelection) {
   const result = checkWinner(playerSelection, computerSelection);
   if (result === "Tie!") {
@@ -30,6 +32,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// prompt - input for the player
 function getPlayerChoice() {
   while (true) {
     const choice = prompt("Please choose Rock, Paper, or Scissors");
@@ -45,6 +48,7 @@ function getPlayerChoice() {
   }
 }
 
+// function which shows the game looping for 5 rounds
 function playGame() {
   let scorePlayer = 0;
   let scoreComputer = 0;
@@ -60,6 +64,8 @@ function playGame() {
       scoreComputer++;
     }
   }
+
+  // Seciton for the end of the game/results
   console.log("Game Over");
   if (scorePlayer > scoreComputer) {
     console.log("Player wins the game!");
